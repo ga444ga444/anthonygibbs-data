@@ -1,6 +1,9 @@
+const withMDX = require('@next/mdx')();
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
+  output: 'export',
+  pageExtensions: ['js', 'jsx', 'md', 'mdx'],
 };
 
-export default nextConfig;
+module.exports = withMDX(nextConfig);
