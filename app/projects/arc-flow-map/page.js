@@ -116,10 +116,11 @@ export default function ArcFlowPage() {
         if (!startTime) startTime = timestamp
         const elapsed = timestamp - startTime
         const globalProgress = Math.min(elapsed / TOTAL_DURATION, 1)
-
-        // How many arcs to show
         const totalArcs = ARC_DATA.length
-        const targetIdx = Math.floor(globalProgress * totalArcs)
+
+        // All arcs burst simultaneously — staggered only by distance
+        const maxDist = Math.max(...ARC_DATA.map(d => d.dist_mi))
+        const targetIdx = totalArcs // show all arcs always
 
         const ctx = canvas.getContext('2d')
         ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -139,13 +140,16 @@ export default function ArcFlowPage() {
 
         // Draw all arcs up to targetIdx
         for (let i = 0; i < Math.min(targetIdx + 1, totalArcs); i++) {
-          const d = ARC_DATA[i]
-          const from = originPt
-          const to = latLngToCanvas(d.lat, d.lng)
-          const intensity = d.count / maxCount
-          const color = `rgba(245,${Math.floor(100 + intensity * 66)},35`
+        const d = ARC_DATA[i]
+        const from = originPt
+        const to = latLngToCanvas(d.lat, d.lng)
+        const intensity = d.count / maxCount
+        const color = `rgba(245,${Math.floor(100 + intensity * 66)},35`
 
-          const arcProgress = i < targetIdx ? 1 : (globalProgress * totalArcs - targetIdx)
+        // Each arc's progress based on its distance — closer arcs complete first
+        const distFraction = ARC_DATA[i].dist_mi / maxDist
+        const arcStart = distFraction * 0.15  // slight stagger by distance
+        const arcProgress = Math.min(Math.max((globalProgress - arcStart) / (0.6 + distFraction * 0.3), 0), 1)
 
           // Fade in based on age
           let alpha = intensity * 0.6 + 0.15
