@@ -402,10 +402,7 @@ export default function ArcFlowMap() {
             <span className="stat-label">Locations Plotted</span>
             <span className="stat-value" id="stat-arcs">0</span>
           </div>
-          <div className="stat-row">
-            <span className="stat-label">Farthest Reach</span>
-            <span className="stat-value" id="stat-dist">—</span>
-          </div>
+          
           <div className="stat-row">
             <span className="stat-label">Origin</span>
             <span className="stat-value">Chicago IL</span>
