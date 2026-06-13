@@ -404,6 +404,11 @@ export default function ArcFlowMap() {
           </div>
           
           <div className="stat-row">
+            <span className="stat-label">Farthest Reach</span>
+            <span className="stat-value" id="stat-dist">—</span>
+          </div>
+
+          <div className="stat-row">
             <span className="stat-label">Origin</span>
             <span className="stat-value">Chicago IL</span>
           </div>
