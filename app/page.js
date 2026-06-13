@@ -35,7 +35,6 @@ export default function Home() {
           maxWidth: '560px'
         }}>
           Dashboards, analysis, and live data visualisations.
-          Built to Head of Data standard.
         </p>
       </header>
 
