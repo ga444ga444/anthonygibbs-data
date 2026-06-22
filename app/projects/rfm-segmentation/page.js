@@ -15,6 +15,11 @@ export default function RfmSegmentationPage() {
         .rfm-header {
           background: #000000;
           border-bottom: 1px solid var(--border);
+        }
+
+        .rfm-header-inner {
+          max-width: 1200px;
+          margin: 0 auto;
           padding: 1.5rem 2rem;
         }
 
@@ -297,7 +302,7 @@ export default function RfmSegmentationPage() {
             padding: 1.25rem;
           }
 
-          .rfm-header {
+          .rfm-header-inner {
             padding: 1.25rem 1.25rem;
           }
 
@@ -340,8 +345,10 @@ export default function RfmSegmentationPage() {
 
       <div className="rfm-page">
         <div className="rfm-header">
-          <h1>Customer Segmentation Dashboard</h1>
-          <div className="rfm-subtitle">RFM Analysis &amp; Strategic Insights (Based on Core Dataset)</div>
+          <div className="rfm-header-inner">
+            <h1>Customer Segmentation Dashboard</h1>
+            <div className="rfm-subtitle">RFM Analysis &amp; Strategic Insights (Based on Core Dataset)</div>
+          </div>
         </div>
 
         <div className="rfm-container">
