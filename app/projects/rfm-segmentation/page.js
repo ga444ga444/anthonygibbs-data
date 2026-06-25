@@ -59,6 +59,7 @@ export default function RfmSegmentationPage() {
           border-radius: 12px;
           padding: 1.5rem;
           border: 1px solid var(--border);
+          transition: border-color 0.2s ease;
         }
 
         .rfm-kpi-title {
@@ -354,22 +355,34 @@ export default function RfmSegmentationPage() {
         <div className="rfm-container">
           {/* KPI Cards */}
           <div className="rfm-kpi-grid">
-            <div className="rfm-card">
+            <div className="rfm-card"
+              onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--accent)'}
+              onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
+            >
               <div className="rfm-kpi-title">Total Customers</div>
               <div className="rfm-kpi-value">4,338</div>
               <div className="rfm-kpi-desc">Active customer base</div>
             </div>
-            <div className="rfm-card">
+            <div className="rfm-card"
+              onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--accent)'}
+              onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
+            >
               <div className="rfm-kpi-title">Total Revenue</div>
               <div className="rfm-kpi-value">£8.91M</div>
               <div className="rfm-kpi-desc">Lifetime value tracked</div>
             </div>
-            <div className="rfm-card">
+            <div className="rfm-card"
+              onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--accent)'}
+              onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
+            >
               <div className="rfm-kpi-title">Avg Order Value</div>
               <div className="rfm-kpi-value">£481</div>
               <div className="rfm-kpi-desc">Per transaction (Overall)</div>
             </div>
-            <div className="rfm-card">
+            <div className="rfm-card"
+              onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--accent)'}
+              onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
+            >
               <div className="rfm-kpi-title">VIP Customers</div>
               <div className="rfm-kpi-value">716</div>
               <div className="rfm-kpi-desc">Top tier segment (16.5%)</div>
@@ -377,7 +390,10 @@ export default function RfmSegmentationPage() {
           </div>
 
           {/* Segment Overview & Distribution */}
-          <div className="rfm-card" style={{ marginBottom: '2rem' }}>
+          <div className="rfm-card" style={{ marginBottom: '2rem' }}
+            onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--accent)'}
+            onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
+          >
             <h2 className="rfm-section-title">Segment Overview &amp; Distribution</h2>
 
             <div className="rfm-segment-list">
@@ -465,7 +481,10 @@ export default function RfmSegmentationPage() {
           </div>
 
           {/* Strategic Insights */}
-          <div className="rfm-card" style={{ marginBottom: '2rem' }}>
+          <div className="rfm-card" style={{ marginBottom: '2rem' }}
+            onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--accent)'}
+            onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
+          >
             <h2 className="rfm-section-title">Strategic Insights</h2>
             <div className="rfm-insights-grid">
               <div className="rfm-insight-card" style={{ borderLeftColor: 'var(--accent)' }}>
@@ -496,7 +515,10 @@ export default function RfmSegmentationPage() {
           </div>
 
           {/* Top 15 Customers Table */}
-          <div className="rfm-card">
+          <div className="rfm-card"
+            onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--accent)'}
+            onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
+          >
             <h2 className="rfm-section-title">Top 15 Customers by Revenue</h2>
             <div className="rfm-table-hint">← Swipe to see all columns →</div>
             <div className="rfm-table-wrapper">
